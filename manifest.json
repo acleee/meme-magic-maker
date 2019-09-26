@@ -1,0 +1,32 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "background": {
+     "scripts": [ "scripts/background.js" ]
+  },
+  "content_scripts": [{
+     "matches": ["*://*.memesyndicate.com/*"],
+     "js": ["scripts/indicator.js"]
+  }],
+  "browser_action": {
+     "default_icon": {
+        "19": "icon128_on.png",
+        "38": "icon128_on.png"
+     },
+     "default_title": "Meme Magic Maker v2"
+  },
+  "description": "Actually makes aclee's meme magic work this time. s/o cigazze for the help",   
+  "icons": {
+      "128": "icon128_on.png"
+  },
+  "manifest_version": 2,
+  "name": "Meme Magic Maker v2",
+  "permissions": [ 
+     "webRequest", 
+     "webRequestBlocking",
+     "<all_urls>", 
+     "management"
+  ],
+  "web_accessible_resources": [ "icon128_on.png" ],
+  "version": "0.0.3"
+}
