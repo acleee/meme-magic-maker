@@ -88,7 +88,7 @@ const turnOn = function turnBypassingOn() {
     ['blocking', 'responseHeaders'],
   );
 
-  localStorage.setItem('cors_reject', '1');
+  localStorage.setItem('cors_reject', 'true');
 };
 
 /**
@@ -106,23 +106,36 @@ const turnOff = function turnBypassingOff() {
 
   chrome.webRequest.onHeadersReceived.removeListener(handleResponseHeaders);
 
-  localStorage.setItem('cors_reject', '');
+  localStorage.setItem('cors_reject', 'false');
 };
 
 /**
- * Turn on the origin hiding on install.
+ * Turn on the origin hiding on install and startup.
  */
 chrome.runtime.onInstalled.addListener(() => {
   turnOn();
 });
+chrome.runtime.onStartup.addListener(() => {
+  turnOn();
+});
+
 
 /**
  * Turn the hiding on/off when the icon is clicked.
  */
 chrome.browserAction.onClicked.addListener(() => {
-  if (localStorage.getItem('cors_reject')) {
+  if (localStorage.getItem('cors_reject') === 'true') {
     turnOff();
   } else {
     turnOn();
+  }
+});
+
+/**
+ * Handle message asking if enabled.
+ */
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.text === 'isOn') {
+    sendResponse(localStorage.getItem('cors_reject'));
   }
 });
