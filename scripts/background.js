@@ -8,7 +8,7 @@
  * @param {Object} details The details of the request to modify.
  */
 const handleRequestHeaders = function handleRequestHeaders(details) {
-  // Ignore none-memesyndicate requests and non-m3u8 and non-ts files.
+  // Ignore non-memesyndicate requests and non-m3u8 and non-ts files.
   const origin = details.initiator || details.originUrl;
   
   if (origin.indexOf('memesyndicate') < 0 || (details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0)) {
@@ -32,8 +32,8 @@ const handleRequestHeaders = function handleRequestHeaders(details) {
  * @param {Object} details The details of the response to modify.
  */
 const handleResponseHeaders = function handleResponseHeaders(details) {
-  // Ignore non-m3u8 and non-ts files.
-  if (details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0) {
+  // Ignore non-memesyndicate requests and non-m3u8 and non-ts files.
+  if (origin.indexOf('memesyndicate') < 0 || details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0) {
     return { responseHeaders: details.responseHeaders };
   }
 

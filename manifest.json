@@ -28,5 +28,5 @@
      "management"
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
-  "version": "0.0.3"
+  "version": "0.0.5"
 }
