@@ -24,9 +24,10 @@
   "permissions": [ 
      "webRequest", 
      "webRequestBlocking",
-     "<all_urls>", 
-     "management"
+     "*://*.memesyndicate.com/*", 
+     "*://*.hulustream.com/*",
+     "*://*.secure.footprint.net/*"
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
-  "version": "0.0.5"
+  "version": "0.0.7"
 }
