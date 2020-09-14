@@ -8,10 +8,10 @@
  * @param {Object} details The details of the request to modify.
  */
 const handleRequestHeaders = function handleRequestHeaders(details) {
-  // Ignore none-memesyndicate requests and non-mpd and non-m3u8 and non-ts files.
+  // Ignore non-memesyndicate requests and non-dash, non-m3u8 and non-ts files.
   const origin = details.initiator || details.originUrl;
   
-  if (origin.indexOf('memesyndicate') < 0 || (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0)) {
+  if (origin.indexOf('memesyndicate') < 0 || (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m4a') < 0 && details.url.indexOf('.m4s') < 0 && details.url.indexOf('.m4v') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0)) {
     return { requestHeaders: details.requestHeaders };
   }
 
@@ -32,8 +32,8 @@ const handleRequestHeaders = function handleRequestHeaders(details) {
  * @param {Object} details The details of the response to modify.
  */
 const handleResponseHeaders = function handleResponseHeaders(details) {
-  // Ignore non-m3u8, non-mpd and non-ts files.
-  if (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0) {
+  // Ignore non-dash, non-m3u8 and non-ts files.
+  if (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m4a') < 0 && details.url.indexOf('.m4s') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0) {
     return { responseHeaders: details.responseHeaders };
   }
 
@@ -76,7 +76,7 @@ const turnOn = function turnBypassingOn() {
       urls: ['<all_urls>'],
       types: ['xmlhttprequest'],
     },
-    ['blocking', 'requestHeaders'],
+    ['blocking', 'requestHeaders', 'extraHeaders'],
   );
 
   chrome.webRequest.onHeadersReceived.addListener(
@@ -85,7 +85,7 @@ const turnOn = function turnBypassingOn() {
       urls: ['<all_urls>'],
       types: ['xmlhttprequest'],
     },
-    ['blocking', 'responseHeaders'],
+    ['blocking', 'responseHeaders', 'extraHeaders'],
   );
 
   localStorage.setItem('cors_reject', 'true');

@@ -5,7 +5,7 @@
      "scripts": [ "scripts/background.js" ]
   },
   "content_scripts": [{
-     "matches": ["*://*.memesyndicate.com/*"],
+     "matches": ["https://memesyndicate.com/*", "https://voo.memesyndicate.com/*", "http://memesyndicate.com/*", "http://voo.memesyndicate.com/*"],
      "js": ["scripts/indicator.js"]
   }],
   "browser_action": {
@@ -24,9 +24,11 @@
   "permissions": [ 
      "webRequest", 
      "webRequestBlocking",
-     "*://*.memesyndicate.com/*", 
-     "*://*.hulustream.com/*",
-     "*://*.secure.footprint.net/*"
+     "*://*.memesyndicate.com/",
+	 "*://*.llnwi.net/",
+     "*://*.hulustream.com/",
+	 "*://*.footprint.net/",
+	 "*://*.akamaized.net/"
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
   "version": "0.0.7"
