@@ -5,7 +5,7 @@
      "scripts": [ "scripts/background.js" ]
   },
   "content_scripts": [{
-     "matches": ["https://memesyndicate.com/*", "https://voo.memesyndicate.com/*", "http://memesyndicate.com/*", "http://voo.memesyndicate.com/*"],
+     "matches": ["https://memesyndicate.com/*", "https://voo.memesyndicate.com/*", "http://memesyndicate.com/*", "http://voo.memesyndicate.com/*", "http://jawn.memesyndicate.com/*", "https://jawn.memesyndicate.com/*"],
      "js": ["scripts/indicator.js"]
   }],
   "browser_action": {
@@ -28,8 +28,10 @@
 	 "*://*.llnwi.net/",
      "*://*.hulustream.com/",
 	 "*://*.footprint.net/",
+	 "*://*.espn.com/",
+	 "*://*.uplynk.com/",
 	 "*://*.akamaized.net/"
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
