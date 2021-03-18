@@ -31,8 +31,9 @@
 	 "*://*.espn.com/",
 	 "*://*.uplynk.com/",
 	 "*://*.akamaized.net/",
-	 "*://*.mlb.com/"
+	 "*://*.mlb.com/",
+	 "*://*.warnermediacdn.com/"
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
-  "version": "0.0.9"
+  "version": "0.0.10"
 }
