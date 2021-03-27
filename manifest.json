@@ -32,8 +32,9 @@
 	 "*://*.uplynk.com/",
 	 "*://*.akamaized.net/",
 	 "*://*.mlb.com/",
-	 "*://*.warnermediacdn.com/"
+	 "*://*.warnermediacdn.com/",
+	 "*://*.endeavorstreaming.net/"
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
-  "version": "0.0.10"
+  "version": "0.0.11"
 }
