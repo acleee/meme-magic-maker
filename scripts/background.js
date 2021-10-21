@@ -11,7 +11,7 @@ const handleRequestHeaders = function handleRequestHeaders(details) {
   // Ignore non-memesyndicate requests and non-dash, non-m3u8 and non-ts files.
   const origin = details.initiator || details.originUrl;
   
-  if (origin.indexOf('memesyndicate') < 0 || (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m4a') < 0 && details.url.indexOf('.m4s') < 0 && details.url.indexOf('.m4v') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0)) {
+  if (origin.indexOf('memesyndicate') < 0 || (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m4a') < 0 && details.url.indexOf('.m4s') < 0 && details.url.indexOf('.m4v') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0 && details.url.indexOf('.mp4') < 0 && details.url.indexOf('manifest(') < 0 && details.url.indexOf('Fragments(') < 0)) {
     return { requestHeaders: details.requestHeaders };
   }
 
@@ -33,7 +33,7 @@ const handleRequestHeaders = function handleRequestHeaders(details) {
  */
 const handleResponseHeaders = function handleResponseHeaders(details) {
   // Ignore non-dash, non-m3u8 and non-ts files.
-  if (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m4a') < 0 && details.url.indexOf('.m4s') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0) {
+  if (details.url.indexOf('.mpd') < 0 && details.url.indexOf('.m4a') < 0 && details.url.indexOf('.m4s') < 0 && details.url.indexOf('.m3u8') < 0 && details.url.indexOf('.ts') < 0 && details.url.indexOf('.mp4') < 0 && details.url.indexOf('manifest(') < 0 && details.url.indexOf('Fragments(') < 0) {
     return { responseHeaders: details.responseHeaders };
   }
 
@@ -42,7 +42,7 @@ const handleResponseHeaders = function handleResponseHeaders(details) {
     const header = details.responseHeaders[i];
     if (header.name.toLowerCase() === 'access-control-allow-origin') {
       header.value = '*';
-      console.log('Modified the CORS header.');
+	console.log(`Modified the CORS header.`);
       return { responseHeaders: details.responseHeaders };
     }
   }
@@ -55,7 +55,7 @@ const handleResponseHeaders = function handleResponseHeaders(details) {
     },
   );
 
-  console.log('Added the CORS header.');
+  console.log(`Added the CORS header.`);
   return { responseHeaders: details.responseHeaders };
 };
 

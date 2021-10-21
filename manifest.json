@@ -35,8 +35,8 @@
 	 "*://*.warnermediacdn.com/",
 	 "*://*.endeavorstreaming.net/",
  	 "*://*.movetv.com/",
-	 "*://*.neulion.com/"
+	 "*://*.neulion.com/" 
   ],
   "web_accessible_resources": [ "icon128_on.png" ],
-  "version": "0.0.13"
+  "version": "0.0.15"
 }
