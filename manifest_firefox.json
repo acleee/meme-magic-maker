@@ -2,7 +2,7 @@
 "update_url": "https://clients2.google.com/service/update2/crx",
 
   "background": {
-     "service_worker": "scripts/service_worker.js"
+	 "scripts": ["scripts/service_worker.js"]
   },
   "content_scripts": [{
      "matches": ["https://memesyndicate.com/*", "https://voo.memesyndicate.com/*", "http://memesyndicate.com/*", "http://voo.memesyndicate.com/*", "http://jawn.memesyndicate.com/*", "https://jawn.memesyndicate.com/*"],

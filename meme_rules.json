@@ -1,0 +1,198 @@
+[
+{
+  "id" : 1,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.m3u8^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 2,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.ts^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 3,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.mpd^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 4,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.m4i^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 5,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.m4a^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 6,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.m4s^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 7,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.m4v^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 8,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.mp4^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 9,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.aac^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 10,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*manifest(*",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 11,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*fragments(*",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+},
+{
+  "id" : 12,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*keydelivery*",
+	"initiatorDomains" : ["memesyndicate.com"],
+	"requestMethods" : ["post"]
+  }
+},
+{
+  "id" : 13,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "set", "value": "null"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]	
+  },
+  "condition" : {
+    "urlFilter" : "*keydelivery*",
+	"initiatorDomains" : ["memesyndicate.com"],
+	"requestMethods" : ["options"]
+  }
+},
+{
+  "id" : 14,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "X-Meme-Magic-Installed", "operation": "set", "value": "true"}]
+  },
+  "condition" : {
+    "regexFilter" : "^https://(.*[.]memesyndicate.com|memesyndicate.com)/",
+	"initiatorDomains" : ["memesyndicate.com"]
+	}
+},
+{
+  "id" : 15,
+  "priority": 1,
+  "action": {
+    "type": "modifyHeaders",
+    "requestHeaders": [{ "header": "Origin", "operation": "remove"},{ "header": "Referer", "operation": "remove"}],
+    "responseHeaders": [{ "header": "Access-Control-Allow-Origin", "operation": "set", "value": "*"}]
+  },
+  "condition" : {
+    "urlFilter" : "*.vtt^",
+	"initiatorDomains" : ["memesyndicate.com"]
+  }
+}
+]
